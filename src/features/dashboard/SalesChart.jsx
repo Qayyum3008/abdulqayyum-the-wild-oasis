@@ -36,8 +36,8 @@ function SalesChart({bookings, numDays}) {
   const data = allDates.map(date => {
     return {
       label: format(date, 'MMM dd'),
-      totalSales: bookings.filter(booking => isSameDay(date, new Date(booking.created_at))).reduce((acc, cur) => cur.totalPrice + acc, 0),
-      extrasSales: bookings.filter(booking => isSameDay(date, new Date(booking.created_at))).reduce((acc, cur) => cur.extrasPrice + acc, 0)
+      totalSales: bookings?.filter(booking => isSameDay(date, new Date(booking.created_at))).reduce((acc, cur) => cur.totalPrice + acc, 0),
+      extrasSales: bookings?.filter(booking => isSameDay(date, new Date(booking.created_at))).reduce((acc, cur) => cur.extrasPrice + acc, 0)
     }
   })
 
